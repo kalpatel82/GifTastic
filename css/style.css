@@ -1,0 +1,21 @@
+body{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  
+    background: #000;
+    color: honeydew;
+}
+
+h1{
+    text-align: center;
+}
+
+.col-lg-8{
+    border: red 2px solid;
+}
+
+.col-lg-4{
+    border: red 2px solid;
+
+}
