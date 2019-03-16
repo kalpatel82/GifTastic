@@ -42,10 +42,13 @@ $("#add-term").on("click", function(event) {
 function getGifs() {
   //get element from array when button is clicked 
   var termName = $(this).attr("data-term");
-  var termStr = termName.split(" ");	
+  var termStr = termName.split(" ").join();
+
+  console.log(termName);
+  console.log(termStr);
   
   var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=lIqTsBAKPqaawAbkE83EPdm06YjOlMS7&q="
-  termStr + "&limit=25&offset=0&rating=G&lang=en";
+  + termStr + "&limit=25&offset=0&rating=G&lang=en";
 
   // make AJAX call giphy api
   $.ajax({
@@ -53,11 +56,12 @@ function getGifs() {
     method: "GET"
   })
 
-  .then(function(response) {
+  .then(function(response){
 
-  	//get results from array
+      console.log(queryURL);
+      console.log(response);
       var dataArray = response.data;
-      console.log(dataArray.data);
+      console.log(dataArray);
       
   	//creat and display div elements for each one of the returned Gifs
       $("#gifsHere").empty();
